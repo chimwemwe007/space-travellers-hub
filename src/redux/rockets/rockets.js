@@ -1,8 +1,7 @@
 const url = 'https://api.spacexdata.com/v3/rockets';
-
 const GET_ROCKETS = 'GET_ROCKETS';
 const RESERVE_ROCKET = 'RESERVE_ROCKET';
-const CANCEL_REVERATION = 'CANCEL_REVERATION';
+const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 const FETCHING_ROCKETS_FAILED = 'FETCHING_ROCKETS_FAILED';
 
 const initialState = {
@@ -19,8 +18,8 @@ export const reserve = (id) => ({
     payload: id,
 })
 
-export const cancelResevertion = (id) => ({
-    type: CANCEL_REVERATION,
+export const cancelReservation = (id) => ({
+    type: CANCEL_RESERVATION,
     payload: id,
 })
 
@@ -39,7 +38,17 @@ export const fetchRockets = () => async (dispatch) => {
                 const {
                     flickr_images: images,
                     rocket_id: id,
+                    description,
+                    reserved = false
+
                 } = rocket
+
+                return {
+                    images,
+                    id,
+                    description,
+                    reserved
+                }
             })
         ))
     } catch(err) {
