@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRockets } from '../../redux/rockets/rocket
-const RocketsComponent = () => {
+import { fetchRockets } from '../redux/rockets/rockets';
+
+function RocketsComponent() {
   const rockets = useSelector((state) => state.rockets.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,6 +21,6 @@ const RocketsComponent = () => {
       ))}
     </>
   );
-};
+}
 
 export default RocketsComponent;
