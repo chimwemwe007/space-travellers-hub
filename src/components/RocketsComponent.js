@@ -14,9 +14,20 @@ function RocketsComponent() {
     <>
       {rockets.map((rocket) => (
         <div key={rocket.id}>
-          <img src={rockets.images} alt={rocket.name} />
-          <h3>{rocket.name}</h3>
-          <p>{rocket.description}</p>
+          <div className="container">
+            <br />
+            <div className="row">
+              <div className="col-sm-4">
+                <img className="images" src={rocket.images} alt={rocket.name} />
+              </div>
+              <div className="col-sm-8">
+                <h3>{rocket.name}</h3>
+                <p>{rocket.description}</p>
+                <button type="button" className="btn btn-primary">Reserve Rocket</button>
+              </div>
+
+            </div>
+          </div>
         </div>
       ))}
     </>

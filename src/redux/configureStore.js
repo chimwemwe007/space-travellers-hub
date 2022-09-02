@@ -1,11 +1,19 @@
+import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-// import axios from 'axios';
-import fetchRockets from './rockets/rockets';
+import thunk from 'redux-thunk';
+import rocketReducer from './rockets/rockets';
+import missionsReducer from './missions/missions';
+
+const rootReducer = combineReducers({
+  rockets: rocketReducer,
+  missions: missionsReducer,
+
+});
+// const store = createStore(reducer, compose(applyMiddleware(thunk, logger)));
 
 const store = configureStore({
-  reducer: {
-    books: fetchRockets,
-  },
+  reducer: rootReducer,
+  middleware: [thunk],
 });
 
 export default store;
