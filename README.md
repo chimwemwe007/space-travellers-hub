@@ -1,64 +1,85 @@
-## Book Store
+# Bookstore
 
-In this project I have built a book store. In completion the website will enable users to add and remove books from the store.
+<img width="852" alt="Capture" src="https://user-images.githubusercontent.com/22744775/186435992-8f1d2589-1069-4eae-9d70-f9f82c57b9a8.PNG">
 
+## Description
+> Space Travelers Hub is is a web site, by which you dispaly information about rocket and reserve rocket. 
 
 ## Built With
+- React Js
+- Redux 
+- JavaScript 
+- HTML
+- CSS - BootStrap
 
-- HTML, 
-- CSS and 
-- JavaScript/React(framework)
-  
 ## Live Demo
 
-Not available yet
+Under development 
 
 ## Getting Started
 
-To use this project you need to clone the repository to your local machine, and open the folder then run index.html file which is the main file of the project.**
+To get the content of this project locally you need to run this command in your terminal
+Before, make sure you have [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/) and [Node.js](https://nodejs.dev/learn/how-to-install-nodejs) installed in your computer.
 
-To get a local copy up and running follow these simple example steps.
+1. `git clone https://github.com/Hamayounali/bookstore.git`
+2. `cd bookstore`
+3. `npm install` 
+  This will download all the dependancies of the project.
+4. `npm start` 
+  The page will open at http://localhost:3000 in your browser.
 
-### Prerequisites
+### Builds the app for production
 
-To work on this project locally you need to have Node.js installed in your machine.
+`npm run build`
 
-### Setup
+It correctly bundles React in production mode and optimizes the build for the best performance. 
 
-To setup this project first you should have to clone the repository and the go to the projects directory and run `npm install` command to install the needed dependency. After that run `npm start` command to run the project from local server to `http://localhost:8080/`.
+## Test
 
-### Install
+For tracking linter errors locally you need to follow these steps:
 
-You have to have Node.js installed before working on this project.
+- After cloning the project make sure you have run this command
 
-### Authors
+  > `npm install` command
 
-👤 Chimwemwe Mkandawire
-- GitHub: [@chimwemwe007](https://github.com/chimwemwe007)
-- Twitter: [@CHxMZMK](twitter.com/chxmz)
-- LinkedIn: [@ChimwemweMkandawire](linkedin.com/in/chimwemwe-mkandawire-0551b41b0/)
-  
-👤 Hammayoun Ali
-- GitHub: [https://github.com/Hamayounali]
-- Twitter: 
-- LinkedIn: 
+- For tracking the linter errors in HTML file run:
+
+  > `npx hint .`
+
+- For tracking the linter errors in CSS file run:
+
+  > `npx stylelint "\*_/_.{css,scss}"`
+
+- And For tracking the linter errors in JavaScript file run:
+
+  > `npx eslint .`
 
 
-## 🤝 Contributing
+## Authors
 
-Contributions, issues, and feature requests are welcome!
+👤 **Hamayoun Ali**
 
-Feel free to check the [issues page](../../issues/).
+- GitHub: [@Hamayounali](https://github.com/Hamayounali)
+- Twitter: [@hamayounAli6](https://twitter.com/hamayounAli6)
+- LinkedIn: [Humayoon Ali](https://www.linkedin.com/in/humayoon-ali-663ba2239)
+
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the issues page.
+
 ## Acknowledgments
 
-- This project is part of week 2 of module 3 in the Microverse study program.
-- Thanks to the Microverse team for the great curriculum 🙌.
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
 
 ## 📝 License
 
-This project is [MIT](https://github.com/Carshy/readme-template/blob/master/MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
