@@ -3,7 +3,7 @@
 <img width="879" alt="space" src="https://user-images.githubusercontent.com/22744775/188184171-d454c8c8-e97c-46f9-9b88-d6f20037ba08.PNG">
 
 ## Description
-> Space Travelers Hub is is a web site, by which you dispaly information about rocket and reserve rocket. 
+> Space Travelers Hub is is a web site, by which you dispaly information about rocket and reserve rocket from a spacex API. 
 
 ## Built With
 - React Js
