@@ -1,6 +1,6 @@
 # Space Travellers Hub
 
-<img width="852" alt="Capture" src="https://user-images.githubusercontent.com/22744775/186435992-8f1d2589-1069-4eae-9d70-f9f82c57b9a8.PNG">
+<img width="879" alt="space" src="https://user-images.githubusercontent.com/22744775/188184171-d454c8c8-e97c-46f9-9b88-d6f20037ba08.PNG">
 
 ## Description
 > Space Travelers Hub is is a web site, by which you dispaly information about rocket and reserve rocket. 
