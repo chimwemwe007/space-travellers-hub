@@ -44,3 +44,4 @@ export const fetchRockets = () => async (dispatch) => {
   }));
   dispatch(SetRockets(rockets));
 };
+// eslint-disable-next-line no-shadow
