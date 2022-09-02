@@ -76,7 +76,7 @@ Give a ⭐️ if you like this project!
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the issues page.
+Feel free to check the [issues page](https://github.com/chimwemwe007/space-travellers-hub/issues).
 
 ## Acknowledgments
 
