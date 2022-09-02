@@ -1,0 +1,59 @@
+.rocket {
+    justify-content: space-between;
+    gap: 2vw;
+    align-items: flex-start;
+    padding: 3vh 0;
+  }
+  
+  .rocket--image {
+    width: 25vw;
+  }
+  
+  .rocket--name {
+    font-weight: 500;
+    font-size: 28px;
+  }
+  
+  .rocket--description {
+    margin-top: 10px;
+    max-width: 45vw;
+    font-size: 18px;
+    line-height: 1.8rem;
+  }
+  
+  .reserved--batch {
+    padding: 5px 8px;
+    background-color: #63de5a;
+    border-radius: 5px;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .user--actions {
+    margin-top: 24px;
+  }
+  
+  .reserve--button {
+    padding: 10px 13px;
+    background-color: rgb(32, 127, 229);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cancel--reserve--button {
+    padding: 9px 11px;
+    background: none;
+    color: rgb(236, 85, 43);
+    border: 1px solid rgb(236, 85, 43);
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .reserve--button:hover,
+  .cancel--reserve--button:hover {
+    opacity: 0.9;
+  }
