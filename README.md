@@ -63,11 +63,11 @@ For tracking linter errors locally you need to follow these steps:
 - Twitter: [@hamayounAli6](https://twitter.com/hamayounAli6)
 - LinkedIn: [Humayoon Ali](https://www.linkedin.com/in/humayoon-ali-663ba2239)
 
-👤 **Chime**
+👤 **Chimwemwe Mkandawire**
 
-- GitHub: [@Hamayounali](https://github.com/Hamayounali)
-- Twitter: [@hamayounAli6](https://twitter.com/hamayounAli6)
-- LinkedIn: [Humayoon Ali](https://www.linkedin.com/in/humayoon-ali-663ba2239)
+- GitHub: [@chimwemwe007](https://github.com/chimwemwe007)
+- Twitter: [@CHXMZ](https://twitter.com/chxmz)
+- LinkedIn: [Chimwemwe Mkandawire](https://www.linkedin.com/in/Chimwemwe-Mkandawire)
 ## Show your support
 
 Give a ⭐️ if you like this project!
