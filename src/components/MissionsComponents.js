@@ -1,44 +1,41 @@
+/* eslint-disable no-unused-vars  */
 import React, { useEffect } from 'react';
-import Table from 'react-bootstrap/Table';
-import { useSelector, useDispatch } from 'react-redux';
-import Mission from './mission';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMission } from '../redux/missions/missions';
 
-import { getMissionsAction, switchMissionAction } from '../redux/missions/missions';
+import TableRow from './mission';
 
 function MissionssComponent() {
-  const missionState = useSelector((state) => state.missions.missions);
+  const missions = useSelector((state) => (state.missions));
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(getMissionsAction());
+    if (missions.length === 0) dispatch(fetchMission());
   }, []);
 
-  const handleClick = (e) => {
-    dispatch(switchMissionAction(e));
-  };
-
+  const tablerRows = missions.map((mission) => (
+    <TableRow
+      key={mission.id}
+      description={mission.description}
+      name={mission.name}
+      id={mission.id}
+      joined={mission.joined}
+    />
+  ));
   return (
-    <Table id="table" striped bordered hover>
-      <thead>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th> </th>
-        </tr>
-      </thead>
-      <tbody>
-
-        {missionState.map((mission) => (
-          <Mission
-            handleClick={handleClick}
-            key={mission.missionId}
-            mission={mission}
-          />
-        )) || []}
-      </tbody>
-
-    </Table>
+    <div className="missionsContainer flex">
+      <table>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th colSpan="2">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tablerRows}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

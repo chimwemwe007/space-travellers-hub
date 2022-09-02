@@ -1,43 +1,36 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { toggleJoined } from '../redux/missions/missions';
 
-function Mission(props) {
-  const { mission, handleClick } = props;
-  const {
-    missionId, missionName, description, joined,
-  } = mission;
-
-  const status = joined ? 'Active Member' : 'NOT A MEMBER';
-  const statusBtn = joined ? 'Leave Mission' : 'Join Mission';
-  const statusBtnClass = joined ? 'leaveBtn' : 'joinBtn';
-
+function TableRow({
+  id,
+  name,
+  description,
+  joined,
+}) {
+  const dispatch = useDispatch();
   return (
     <tr>
-      <td>{missionName}</td>
-      <td>{description}</td>
-      <td className="statusContainer text-center align-middle">
-        <span className={`${joined ? 'bg-info' : 'bg-secondary'} status`}>{status}</span>
+      <td className="missionName">{name}</td>
+      <td className="missionDescription">{description}</td>
+      <td>
+        {!joined
+          ? <span className="statusJoined">Not a member</span>
+          : <span className="statusLeaved">Member</span>}
       </td>
-      <td className="btnJoin text-center align-middle">
-        <button
-          type="button"
-          className={statusBtnClass}
-          onClick={() => handleClick(missionId)}
-        >
-          {statusBtn}
-        </button>
+      <td>
+        {!joined
+          ? <button className="joinMission" type="button" onClick={() => dispatch(toggleJoined(id))}>Join Mission</button>
+          : <button className="leaveMission" type="button" onClick={() => dispatch(toggleJoined(id))}>Abort Mission</button>}
       </td>
     </tr>
   );
 }
 
-export default Mission;
-
-Mission.propTypes = {
-  mission: PropTypes.func.isRequired,
-  handleClick: PropTypes.func,
+TableRow.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  joined: PropTypes.bool.isRequired,
 };
-
-Mission.defaultProps = {
-  handleClick: () => { },
-};
+export default TableRow;

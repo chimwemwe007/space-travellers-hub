@@ -1,61 +1,44 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+const FETCH_DATA = 'FETCH_DATA';
+const TOGGLE_MISSION = 'TOGGLE_MISSION';
+const apiUrl = 'https://api.spacexdata.com/v3/missions';
 
-// Action types
-const GET_MISSIONS = 'missions/GET_MISSIONS';
-const SWITCH_JOIN = 'missions/SWITCH_JOIN';
-
-// Initial State
-const initialState = {
-  missions: [],
-  status: null,
-};
-
-const switchReserved = (state, id) => state.missions.map((mission) => {
-  if (mission.missionId !== id) { return mission; }
-  return { ...mission, joined: !mission.joined };
+export const fetchMissions = (payload) => ({
+  type: FETCH_DATA,
+  payload,
 });
 
+export const toggleJoined = (id) => ({
+  type: TOGGLE_MISSION,
+  id,
+});
+
+export const fetchMission = () => async (dispatch) => {
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  const missionData = data.map((mission) => ({
+    name: mission.mission_name,
+    id: mission.mission_id,
+    description: mission.description,
+    joined: false,
+  }));
+  dispatch(fetchMissions(missionData));
+};
+
 // eslint-disable-next-line default-param-last
-const missionsReducer = (state = initialState, action) => {
+const missionsReducer = (state = [], action) => {
   switch (action.type) {
-    case `${GET_MISSIONS}/pending`:
-      return {
-        missions: [],
-        status: 'Missions loading',
-      };
-    case `${GET_MISSIONS}/fulfilled`:
-      return {
-        missions: action.payload,
-        status: 'Missions fetched successfully',
-      };
-    case `${SWITCH_JOIN}`:
-      return {
-        missions: switchReserved(state, action.payload),
-        status: 'Mission join switched successfully',
-      };
+    case FETCH_DATA:
+      return action.payload;
+    case TOGGLE_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id !== action.id) return mission;
+        return { ...mission, joined: !mission.joined };
+      });
+      return newState;
+    }
     default:
       return state;
   }
 };
-
-export const getMissionsAction = createAsyncThunk(GET_MISSIONS, async () => {
-  const BASE_URL = 'https://api.spacexdata.com/v3/missions';
-  let data = await fetch(BASE_URL);
-  data = await data.json();
-  const missionArray = [];
-  data.map((item) => {
-    const mission = {
-      missionId: item.mission_id,
-      missionName: item.mission_name,
-      description: item.description,
-      joined: false,
-    };
-    missionArray.push(mission);
-    return missionArray;
-  });
-  return missionArray;
-});
-
-export const switchMissionAction = (id) => ({ type: SWITCH_JOIN, payload: id });
 
 export default missionsReducer;
