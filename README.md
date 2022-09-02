@@ -1,4 +1,4 @@
-# Bookstore
+# Space Travellers Hub
 
 <img width="852" alt="Capture" src="https://user-images.githubusercontent.com/22744775/186435992-8f1d2589-1069-4eae-9d70-f9f82c57b9a8.PNG">
 
@@ -21,7 +21,7 @@ Under development
 To get the content of this project locally you need to run this command in your terminal
 Before, make sure you have [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/) and [Node.js](https://nodejs.dev/learn/how-to-install-nodejs) installed in your computer.
 
-1. `git clone https://github.com/Hamayounali/bookstore.git`
+1. `git clone https://github.com/chimwemwe007/space-travellers-hub.git`
 2. `cd bookstore`
 3. `npm install` 
   This will download all the dependancies of the project.
