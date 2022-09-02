@@ -1,6 +1,5 @@
 const SET_ROCKETS = 'SET_ROCKETS';
 const TOGGLE_RESERVED = 'SET_RESERVED';
-
 const rockets = [];
 // eslint-disable-next-line default-param-last
 export default function bookReducer(state = rockets, action) {
@@ -19,18 +18,15 @@ export default function bookReducer(state = rockets, action) {
       return state;
   }
 }
-
 // eslint-disable-next-line no-shadow
 export const SetRockets = (rockets) => ({
   type: SET_ROCKETS,
   rockets,
 });
-
 export const ToggleReserved = (id) => ({
   type: TOGGLE_RESERVED,
   id,
 });
-
 export const fetchRockets = () => async (dispatch) => {
   const response = await fetch('https://api.spacexdata.com/v3/rockets');
   const data = await response.json();
