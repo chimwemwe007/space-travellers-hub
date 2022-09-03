@@ -1,9 +1,9 @@
 const SET_ROCKETS = 'SET_ROCKETS';
 const TOGGLE_RESERVED = 'SET_RESERVED';
 
-const rockets = [];
+const rocketsArr = [];
 // eslint-disable-next-line default-param-last
-export default function bookReducer(state = rockets, action) {
+export default function bookReducer(state = rocketsArr, action) {
   switch (action.type) {
     case SET_ROCKETS: {
       return action.rockets;
@@ -20,7 +20,6 @@ export default function bookReducer(state = rockets, action) {
   }
 }
 
-// eslint-disable-next-line no-shadow
 export const SetRockets = (rockets) => ({
   type: SET_ROCKETS,
   rockets,
@@ -34,14 +33,13 @@ export const ToggleReserved = (id) => ({
 export const fetchRockets = () => async (dispatch) => {
   const response = await fetch('https://api.spacexdata.com/v3/rockets');
   const data = await response.json();
-  // eslint-disable-next-line no-shadow
-  const rockets = data.map((rocket) => ({
+
+  const rocketData = data.map((rocket) => ({
     id: rocket.rocket_id,
     name: rocket.rocket_name,
     image: rocket.flickr_images[(Math.random() >= 0.5) ? 1 : 0],
     description: rocket.description,
     Reserved: false,
   }));
-  dispatch(SetRockets(rockets));
+  dispatch(SetRockets(rocketData));
 };
-// eslint-disable-next-line no-shadow

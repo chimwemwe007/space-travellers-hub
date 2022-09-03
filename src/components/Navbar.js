@@ -1,18 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-//import { Link } from 'react-router-dom';
 import logo from './logo.png';
-
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-sm panel-bg menu ">
       <div className="container">
-        <NavLink className="Bookstore-CMS" to="/" >
+
+        <NavLink className="Bookstore-CMS" to="/">
           <img className="logo" src={logo} alt="fireSpot" />
           Space Travelers Hub
- 
-        </Link>
+
+        </NavLink>
 
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
