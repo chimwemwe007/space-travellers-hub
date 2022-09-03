@@ -17,7 +17,7 @@ function ProfileComponent() {
                 if (rocket.Reserved) {
                   rocketsReserved += 1;
                   return (
-                    <tr key={rocket.id}>
+                    <tr>
                       <td>{rocket.name}</td>
                     </tr>
                   );
@@ -45,7 +45,7 @@ function ProfileComponent() {
                 if (mission.joined) {
                   missionJoined += 1;
                   return (
-                    <tr key={mission.id}>
+                    <tr>
                       <td>{mission.name}</td>
                     </tr>
                   );
